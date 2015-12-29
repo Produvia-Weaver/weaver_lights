@@ -1,0 +1,43 @@
+<RelativeLayout
+    android:id="@+id/custom_horizontal_progressbar"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:id="@+id/linearLayout">
+        <LinearLayout
+            android:id="@+id/progress_image_box"
+            android:layout_centerHorizontal="true"
+            android:layout_width="150dp"
+            android:layout_height="150dp">
+            <ProgressBar
+                android:id="@+id/progressbar"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:indeterminateDrawable="@drawable/my_wheel"/>
+            <ImageView
+                android:id="@+id/lights_not_found"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:visibility="gone"
+                android:src="@drawable/not_found"/>
+        </LinearLayout>
+
+    <TextView
+        android:padding="10dp"
+        android:id="@+id/progressbar_message"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textSize="30dp"
+        android:textColor="@color/material_blue_grey_800"
+        android:layout_below="@+id/progress_image_box"
+        android:layout_centerHorizontal="true" />
+    </RelativeLayout>
+
+</RelativeLayout>
