@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Weaver Lights</string>
+    <string name="title_iothub_list">Light List</string>
+    <string name="title_iothub_detail">Light Controller</string>
+    <string name="prompt_user_pass">Enter the username and password of the target device</string>
+    <string name="user_name">Choose a Username</string>
+    <string name="user_password">Password</string>
+
+    <string name="facebook_app_id">1022339294456385</string>
+
+</resources>
