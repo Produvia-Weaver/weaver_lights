@@ -40,11 +40,11 @@ public class LightService extends CustomListItem implements WeaverSdk.WeaverSdkC
 
     public boolean isLightDimmer(){
 
-        return getServiceType().startsWith("_light_dimmer");
+        return getServiceType(false).startsWith("_light_dimmer");
     }
 
     public boolean isLightColor(){
-        return getServiceType().startsWith("_light_color");
+        return getServiceType(false).startsWith("_light_color");
     }
 
 
@@ -103,9 +103,12 @@ public class LightService extends CustomListItem implements WeaverSdk.WeaverSdkC
         }
     }
 
-    private static String getServiceType(JSONObject service){
+    private static String getServiceType(JSONObject service, boolean short_type){
         try {
+            if(!short_type)
             return service.getString("service");
+            else
+                return service.getString("service").split("\\.")[0];
         }catch (JSONException e){
             return "";
         }
@@ -113,8 +116,8 @@ public class LightService extends CustomListItem implements WeaverSdk.WeaverSdkC
     }
 
 
-    public String getServiceType(){
-        return getServiceType(mService);
+    public String getServiceType(boolean short_type){
+        return getServiceType(mService, short_type);
     }
 
 
@@ -272,7 +275,7 @@ public class LightService extends CustomListItem implements WeaverSdk.WeaverSdkC
 
     public boolean equals(JSONObject service, boolean ignore_local_global)  {
             return  (ignore_local_global || (isGlobal() == isGlobal(service)))&&
-                    (getServiceType().equals(getServiceType(service))) &&
+                    (getServiceType(true).equals(getServiceType(service,true))) &&
                     (getId().equals(getId(service)) &&
                     (getDeviceId().equals(getDeviceId(service))) );
     }
