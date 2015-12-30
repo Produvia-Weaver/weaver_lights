@@ -81,8 +81,10 @@ public class SmartLightsActivity extends Activity implements SmartLightsFragment
         if( RUN_DISCOVERY ) {
             WeaverSdkApi.discoveryService(this, true);
         }
+
         //fetch the services that have already been discovered in previous scans
         //these services will be returned in the onTaskCompleted callback:
+
         WeaverSdkApi.servicesGet(this, null);
     }
 
