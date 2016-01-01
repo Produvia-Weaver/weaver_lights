@@ -21,11 +21,11 @@
 ![Weaver Lights Image1](https://lh3.googleusercontent.com/1DOkB1oYLbqPWClV2OjoA6jZ8B9V7S4g1ibXE9MH5LmESOruCtJzwEHeWsuZg5NHkVI7=h310-rw) ![Weaver Lights Image2](https://lh3.googleusercontent.com/KYhRgqH_wiw7n5E7KS_vkXS-5PzrzbkJnMMj7Aqe6yjEusmzgDtq8uPf2n1WMRmK5Jql=h310-rw) ![Weaver Lights Image3](https://lh3.googleusercontent.com/nJanFq_JtE0qI_XiT8y9AAbzZ6Xjh8Mz-Bh1-ILc2q6bauokf_dJ5mdbY7SyZdikZuwa=h310-rw) 
 
 ### How To Use Weaver SDK
-- ##### Simply add the android SDK library to your build.gradle
-- ##### [Join our beta program] to receive your Weaver-SDK API KEY
-- ##### Checkout the [Full Step By Step Guide] for building a lighting App using the Weaver SDK
-- ##### Also checkout the [Android Documentation]
-##
+- Simply add the android SDK library to your build.gradle
+- [Join our beta program] to receive your Weaver-SDK API KEY
+- Checkout the [Full Step By Step Guide] for building a lighting App using the Weaver SDK
+- Also checkout the [Android Documentation]
+
 
 ### Installation
 
