@@ -28,8 +28,6 @@ public class LoginActivity extends Activity implements WeaverSdk.WeaverSdkCallba
     private boolean mShowLoginView = false;
 
 
-    private String mUserEmail;
-    private String mUserPassword;
 
 
 
@@ -37,6 +35,8 @@ public class LoginActivity extends Activity implements WeaverSdk.WeaverSdkCallba
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_login);
+
         //initialize weaver sdk -
         // - enter your Weaver API key and call WeaverSdkApi.init
         // - if you don't have an API key - you can get one at:
@@ -44,7 +44,6 @@ public class LoginActivity extends Activity implements WeaverSdk.WeaverSdkCallba
         final String API_KEY = "XXXXXXXXXXXXXXX";
         WeaverSdkApi.init(this, API_KEY, getApplicationContext());
 
-        setContentView(R.layout.activity_login);
 
 
         TextView registerScreen = (TextView) findViewById(R.id.link_to_register);
@@ -70,6 +69,9 @@ public class LoginActivity extends Activity implements WeaverSdk.WeaverSdkCallba
      * User login
      ****************************************************************************************/
     public void login() {
+        String mUserEmail;
+        String mUserPassword;
+
         EditText userEmailField = (EditText) findViewById(R.id.email);
         mUserEmail = userEmailField.getText().toString();
         EditText userPasswordField = (EditText) findViewById(R.id.password);
