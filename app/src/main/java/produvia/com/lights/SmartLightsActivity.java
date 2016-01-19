@@ -43,11 +43,8 @@ public class SmartLightsActivity extends Activity implements SmartLightsFragment
     private static final int MAX_SCAN_CYCLES = 3;
     //let's not show services we haven't seen in two weeks:
     private static final long MAX_TIME_SINCE_LAST_SEEN_IN_MILLIS_TO_BE_CONSIDERED_ONLINE = (1000*60*60*24*14);
-
-
     public static boolean mErrorOccurred = false;
     public static String mErrorMessage = "";
-
     private static int mScanCycleCounter = 0;
 
     private boolean mActivityPaused = true;
@@ -232,7 +229,7 @@ public class SmartLightsActivity extends Activity implements SmartLightsFragment
                 //prompt login:
                 promptLogin(service, data);
             }
-            else if(service_type.startsWith("_light_" )){//_light_color|| _light_dimmer || _light
+            else if(service_type.startsWith("_light" )){//_light_color|| _light_dimmer || _light
                 //yey! got a light_color service - let's add it to the list:
                 addLightService(service,
                         data.getJSONObject("devices_info").getJSONObject(service.getString("device_id")),
