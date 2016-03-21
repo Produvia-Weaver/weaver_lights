@@ -32,7 +32,7 @@
 Add WeaverSDK android library to your build.gradle dependencies:
 
 ```sh
-  compile 'produvia.com.weaverandroidsdk:weaverandroidsdk:0.0.26'
+  compile 'produvia.com.weaverandroidsdk:weaverandroidsdk:0.0.27'
 ```
 > The goal of the WeaverSDK is to let developers concentrate on developing their UI without the need to bother with maintaining tons of APIs.
 > Weaver uses a simple JSON api in order to scan for and control smart devices.
