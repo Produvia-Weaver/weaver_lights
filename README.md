@@ -56,7 +56,7 @@ The Weaver Lights app is distributed under the MIT License
 
    [Full Step By Step Guide]: <http://www.weavingthings.com/technical_docs/smartlights_walkthrough/>
    [JSON API]: <http://weavingthings.com/weaver-sdk-reference/>
-   [Join our beta program]: <http://weavingthings.com/#contact>
+   [Join our beta program]: <https://produvia-net.com/developers>
    [Android Documentation]: <http://weavingthings.com/weaver-sdk-reference/>
    [Weaver SDK]: <http://weavingthings.com>
    [Checkout Weaver Lights at Google Play]: <https://play.google.com/store/apps/details?id=produvia.com.lights&hl=en>
