@@ -45,6 +45,7 @@ Weaver Lights uses [LarsWerkman/HoloColorPicker] opensource library
 ### Documentation
 - [Android Documentation]
 - [Full Step By Step Guide]
+- [Also check out our Weaver REST Server]
 
 
 License
@@ -61,4 +62,5 @@ The Weaver Lights app is distributed under the MIT License
    [Weaver SDK]: <http://weavingthings.com>
    [Checkout Weaver Lights at Google Play]: <https://play.google.com/store/apps/details?id=produvia.com.lights&hl=en>
    [LarsWerkman/HoloColorPicker]: <https://github.com/LarsWerkman/HoloColorPicker>
+   [Also check out our Weaver REST Server]: <https://github.com/Produvia-Weaver/WeaverRest>
    
