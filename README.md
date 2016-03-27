@@ -32,7 +32,7 @@
 Add WeaverSDK android library to your build.gradle dependencies:
 
 ```sh
-  compile 'produvia.com.weaverandroidsdk:weaverandroidsdk:0.0.26'
+  compile 'produvia.com.weaverandroidsdk:weaverandroidsdk:0.0.27'
 ```
 > The goal of the WeaverSDK is to let developers concentrate on developing their UI without the need to bother with maintaining tons of APIs.
 > Weaver uses a simple JSON api in order to scan for and control smart devices.
@@ -45,6 +45,7 @@ Weaver Lights uses [LarsWerkman/HoloColorPicker] opensource library
 ### Documentation
 - [Android Documentation]
 - [Full Step By Step Guide]
+- [Also check out our Weaver REST Server]
 
 
 License
@@ -56,9 +57,10 @@ The Weaver Lights app is distributed under the MIT License
 
    [Full Step By Step Guide]: <http://www.weavingthings.com/technical_docs/smartlights_walkthrough/>
    [JSON API]: <http://weavingthings.com/weaver-sdk-reference/>
-   [Join our beta program]: <http://weavingthings.com/#contact>
+   [Join our beta program]: <https://produvia-net.com/developers>
    [Android Documentation]: <http://weavingthings.com/weaver-sdk-reference/>
    [Weaver SDK]: <http://weavingthings.com>
    [Checkout Weaver Lights at Google Play]: <https://play.google.com/store/apps/details?id=produvia.com.lights&hl=en>
    [LarsWerkman/HoloColorPicker]: <https://github.com/LarsWerkman/HoloColorPicker>
+   [Also check out our Weaver REST Server]: <https://github.com/Produvia-Weaver/WeaverRest>
    
