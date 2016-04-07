@@ -5,7 +5,7 @@
 
 ## 
 ## [Weaver SDK]
-##### [Weaver SDK] is a cloud service and SDK that, lets developers connect and control smart devices easily saving the need to implement and maintain many different APIs and SDKs
+##### [Weaver SDK] is a cloud service and SDK, that lets developers connect and control smart devices easily saving the need to implement and maintain many different APIs and SDKs
 ###
 ### Description
 ##### Weaver Lights uses the Weaver Android SDK in order to:
