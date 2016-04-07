@@ -72,13 +72,14 @@ public class SmartLightsFragment extends Fragment implements CustomRecyclerAdapt
     }
 
     @Override
-    public void onItemClicked(CustomListItem item) {
+    public void onItemClicked(CustomListItem item, View v, int position) {
         if(item instanceof LightService){
             item.onClick();
             notifyDataSetChanged();
             return;
         }
-        mCallbacks.onItemSelected(item);
+        if(mCallbacks != null)
+            mCallbacks.onItemSelected(item, v, position);
     }
 
     @Override
@@ -93,8 +94,7 @@ public class SmartLightsFragment extends Fragment implements CustomRecyclerAdapt
                 toggleItem.onColorChanged(false);
             ((LightService) toggleItem).onPowerChanged(value, true);
 
-        }
-        else {
+        } else {
             toggleItem.setColor(color);
             //gather all the lights under this specific network and toggle them:
             ArrayList <String> ids_triggered = new ArrayList<>();
@@ -144,8 +144,8 @@ public class SmartLightsFragment extends Fragment implements CustomRecyclerAdapt
 
 
     @Override
-    public void onLeftImageClicked(CustomListItem item) {
-        onItemClicked(item);
+    public void onLeftImageClicked(CustomListItem item,View v, int position) {
+        onItemClicked(item, v,position );
     }
 
     /**
@@ -157,7 +157,7 @@ public class SmartLightsFragment extends Fragment implements CustomRecyclerAdapt
         /**
          * Callback for when an item has been selected.
          */
-        void onItemSelected(CustomListItem hub);
+        void onItemSelected(CustomListItem hub, View v, int position);
         void onViewCreated(CustomRecyclerAdapter adapter);
     }
 
@@ -167,7 +167,7 @@ public class SmartLightsFragment extends Fragment implements CustomRecyclerAdapt
      */
     private static Callbacks sDummyCallbacks = new Callbacks() {
         @Override
-        public void onItemSelected(CustomListItem c) {
+        public void onItemSelected(CustomListItem c, View v, int position) {
         }
 
         @Override
