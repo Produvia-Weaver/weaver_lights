@@ -10,7 +10,7 @@ android {
         applicationId "produvia.com.lights"
         minSdkVersion 14
         targetSdkVersion 22
-        versionCode 1
+        versionCode 7
         versionName "1.0"
     }
     buildTypes {
@@ -21,15 +21,13 @@ android {
     }
 }
 
-repositories { 
-  mavenCentral() 
-}
+repositories { mavenCentral() }
 
 dependencies {
     compile 'com.android.support:appcompat-v7:22.2.1'
     compile 'com.android.support:support-v4:22.2.1'
     compile 'com.android.support:palette-v7:22.0.0'
-    compile 'produvia.com.weaverandroidsdk:weaverandroidsdk:0.0.27'
+    compile 'produvia.com.weaverandroidsdk:weaverandroidsdk:0.0.30'
     compile 'com.android.support:recyclerview-v7:22.2.1'
     compile 'com.android.support:cardview-v7:22.2.1'
     compile 'com.larswerkman:HoloColorPicker:1.5'
