@@ -10,9 +10,13 @@ import android.app.AlertDialog;
 import android.app.FragmentTransaction;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -98,12 +102,31 @@ public class SmartLightsActivity extends Activity implements SmartLightsFragment
         super.onPause();
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle item selection
+        switch (item.getItemId()) {
+            case R.id.demo_lab:
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://produvia-lab.cloudapp.net/demo/index.html"));
+                startActivity(browserIntent);
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
     /**
      * Callback method from {@link SmartLightsFragment.Callbacks}
      * indicating that the item with the given ID was selected.
      */
     @Override
-    public void onItemSelected(CustomListItem item) {
+    public void onItemSelected(CustomListItem item, View v, int position) {
 
         getFragmentManager().beginTransaction()
                 .replace(R.id.main_fragment, new ColorSchemeFragment())
@@ -231,9 +254,13 @@ public class SmartLightsActivity extends Activity implements SmartLightsFragment
             }
             else if(service_type.startsWith("_light" )){//_light_color|| _light_dimmer || _light
                 //yey! got a light_color service - let's add it to the list:
+                try{
                 addLightService(service,
                         data.getJSONObject("devices_info").getJSONObject(service.getString("device_id")),
                                 data.getJSONObject("networks_info").getJSONObject(service.getString("network_id")));
+                }catch (JSONException e){
+
+                }
             }
 
 

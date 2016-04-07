@@ -84,12 +84,10 @@ public class RegisterActivity extends Activity implements WeaverSdk.WeaverSdkCal
                         Intent intent = new Intent(RegisterActivity.this, SmartLightsActivity.class);
                         startActivity(intent);
                         finish();
-                    } else{
-                        if(json.has("info"))
-                            Toast.makeText(RegisterActivity.this, json.getString("info"), Toast.LENGTH_LONG).show();
-
+                    }else{
+                      if(json.has("info"))
+                          Toast.makeText(RegisterActivity.this, json.getString("info"), Toast.LENGTH_LONG).show();
                     }
-
                 } catch (Exception e) {
                     //usually if the emmail is already taken:
                     Toast.makeText(RegisterActivity.this, e.getMessage(), Toast.LENGTH_LONG).show();
