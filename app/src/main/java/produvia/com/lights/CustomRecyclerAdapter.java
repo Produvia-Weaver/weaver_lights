@@ -34,9 +34,9 @@ public class CustomRecyclerAdapter extends RecyclerView.Adapter<CustomRecyclerAd
 
     public interface CustomListCallbacks {
         void onColorChanged(CustomListItem cli);
-        void onItemClicked(CustomListItem item);
+        void onItemClicked(CustomListItem item, View v, int position);
         void onToggleClicked(CustomListItem item, boolean checked);
-        void onLeftImageClicked(CustomListItem item);
+        void onLeftImageClicked(CustomListItem item, View v, int position);
     }
 
     public CustomListCallbacks mCallbacks;
@@ -101,7 +101,7 @@ public class CustomRecyclerAdapter extends RecyclerView.Adapter<CustomRecyclerAd
                 int itemPosition = position;
                 CustomListItem item = CustomRecyclerAdapter.this.mArray.get(itemPosition);
                 if (mCallbacks != null)
-                    mCallbacks.onItemClicked(item);
+                    mCallbacks.onItemClicked(item, v, itemPosition);
             }
         });
 
@@ -111,26 +111,34 @@ public class CustomRecyclerAdapter extends RecyclerView.Adapter<CustomRecyclerAd
                 int itemPosition = position;
                 CustomListItem item = CustomRecyclerAdapter.this.mArray.get(itemPosition);
                 if (mCallbacks != null)
-                    mCallbacks.onLeftImageClicked(item);
+                    mCallbacks.onLeftImageClicked(item, v, itemPosition);
             }
         });
         //holder.leftImageView.setClickable(left_image_clickable && mListView.getCheckedItemCount()==0);
 
-        boolean initColorPicker = false;
+
+        boolean initPicker = false;
+        int colorPickerVisibility = View.GONE;
+        int satBriVisibility = View.GONE;
+        int valueVisibility = View.GONE;
+
         if (item.isColorPickerEnabled()) {
-            holder.colorPicker.setVisibility(View.VISIBLE);
-            holder.saturation_brightness_bar.setVisibility(View.VISIBLE);
-            initColorPicker = true;
-        }
-
-        if (item.isDimmerEnabled()) {
-            holder.value_bar.setVisibility(View.VISIBLE);
-
-            initColorPicker = true;
+            colorPickerVisibility = View.VISIBLE;
+            satBriVisibility = View.VISIBLE;
+            initPicker = true;
+        }else if(item.isDimmerEnabled()) {
+            valueVisibility = View.VISIBLE;
+            initPicker = true;
         }
 
 
-        if(initColorPicker)
+        if(holder.colorPicker != null)
+            holder.colorPicker.setVisibility(colorPickerVisibility);
+        if(holder.saturation_brightness_bar != null)
+            holder.saturation_brightness_bar.setVisibility(satBriVisibility);
+        if(holder.value_bar != null)
+            holder.value_bar.setVisibility(valueVisibility);
+        if(initPicker)
             initializeColorPicker(holder.itemView, item);
 
 

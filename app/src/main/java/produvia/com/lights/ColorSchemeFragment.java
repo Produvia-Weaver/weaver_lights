@@ -92,11 +92,11 @@ public class ColorSchemeFragment extends Fragment implements CustomRecyclerAdapt
     @Override
     public void onColorChanged(CustomListItem item) {}
     @Override
-    public void onItemClicked(CustomListItem item) {}
+    public void onItemClicked(CustomListItem item, View v, int position) {}
     @Override
     public void onToggleClicked(CustomListItem item, boolean value) {}
     @Override
-    public void onLeftImageClicked(CustomListItem item) {}
+    public void onLeftImageClicked(CustomListItem item, View v, int position) {}
 
 
     //in this case the viewHolder is a simple view with a bitmap:
