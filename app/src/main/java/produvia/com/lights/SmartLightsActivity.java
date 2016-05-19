@@ -62,6 +62,7 @@ public class SmartLightsActivity extends Activity implements SmartLightsFragment
 
     private CustomRecyclerAdapter mCategoryListAdapter;
     public static ArrayList<CustomListItem> mIotLightServices = new ArrayList<>();
+    private static ArrayList<String>mBlackListedLoginServices = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -278,8 +279,6 @@ public class SmartLightsActivity extends Activity implements SmartLightsFragment
         //if it's a global service - it can be used from anywhere and will be added:
         boolean is_user_inside_network = network.getBoolean("user_inside_network");
         boolean is_global = LightService.isGlobal(service);
-        if( !is_user_inside_network && !is_global )
-            return;
         //also if this is a global service that has an identical local service and the user is inside
         //the network - we'll prefer the local service:
         //make sure the service isn't already in the list:
@@ -429,6 +428,10 @@ public class SmartLightsActivity extends Activity implements SmartLightsFragment
                                        final JSONObject responseData,
                                        final boolean isKey,
                                        String description ) throws JSONException {
+        final String login_service_id = loginService.getString("id");
+        for(int i = 0; i < mBlackListedLoginServices.size(); i++)
+            if(mBlackListedLoginServices.get(i).equals(login_service_id))
+                return;
 
         LayoutInflater li = LayoutInflater.from(SmartLightsActivity.this);
         View promptsView = li.inflate(R.layout.prompt_userpass, null);
@@ -488,6 +491,8 @@ public class SmartLightsActivity extends Activity implements SmartLightsFragment
             }
         }).setPositiveButton("Cancel", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int id) {
+                //blacklist this service for the session - the user isn't interested:
+                mBlackListedLoginServices.add(login_service_id);
                 dialog.dismiss();
             }
         });
