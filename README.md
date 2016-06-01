@@ -22,7 +22,7 @@
 
 ### How To Use Weaver SDK
 - Simply add the android SDK library to your build.gradle
-- [Join our beta program] to receive your Weaver-SDK API KEY
+- [Sign up] to receive your Weaver-SDK API KEY - also check out our [getting started video]
 - Checkout the [Full Step By Step Guide] for building a lighting App using the Weaver SDK
 - Also checkout the [Android Documentation]
 
@@ -57,7 +57,8 @@ The Weaver Lights app is distributed under the MIT License
 
    [Full Step By Step Guide]: <http://www.weavingthings.com/technical_docs/smartlights_walkthrough/>
    [JSON API]: <http://weavingthings.com/weaver-sdk-reference/>
-   [Join our beta program]: <https://produvia-net.com/developers>
+   [Sign up]: <https://produvia-net.com/developers>
+   [getting started video]: <https://youtu.be/2O-vDnG4PZk>
    [Android Documentation]: <http://weavingthings.com/weaver-sdk-reference/>
    [Weaver SDK]: <http://weavingthings.com>
    [Checkout Weaver Lights at Google Play]: <https://play.google.com/store/apps/details?id=produvia.com.lights&hl=en>
